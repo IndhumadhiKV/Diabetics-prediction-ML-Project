@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetics prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+<style>
+html{
+background:url('hospital-readmission.jpg') no-repeat center center fixed;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover
+}
+</style>
+</head>
+
+<body bgcolor="Sky Blue">
+ <div class="login">
+<br>
+<br>
+<br>
+<h2 style="color:black;"><i><font size="12">H</font>ospital <font size="12">R</font>eadmission <font size="12">F</font>or <font size="12">P</font>atients <font size="12">W</font>ith <font size="12">D</font>iabetics</i></h2>	
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+<p><h1 valign="center" style="color:violet">Result</h1></p><br>
+<p><h2 style="color:red">Chance of readmission : 64%</h2></p><br><br><br><br><br><br>
+
+    </form>
+<h2>
+   <p><h3><mark>While the overall 30-day readmission rate of hospitalized patients is 8.5-13.5% [16, 17], the 30-day readmission rate of diabetics patients is 14.4-22.7% [18,19,20,21]</mark></h3></p>
+
+</div>
+<h3 style="color: red;"><marquee><i>A hospital readmission is an episode when a patient who had been discharged from a hospital is admitted again within a specified time interval. Readmission rates had increasingly been used as an outcome measure in health services</i></marquee></h3><br>
+</font></style></body>
+
+</body>
+</html>
 
