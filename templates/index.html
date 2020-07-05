@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetics Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 30%;
+}
+</style>
+<style>
+html{
+background:url('hospital-readmission.jpg') no-repeat center center fixed;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover
+}
+</style>
+</head>
+
+<body bgcolor="Sky Blue">
+ <div class="login">
+	<h2 style="color:black;"><i><font size="12">H</font>ospital <font size="12">R</font>eadmission <font size="12">F</font>or <font size="12">P</font>atients <font size="12">W</font>ith <font size="12">D</font>iabetics</i></h2>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+    	<input type="text" name="Gender" placeholder="Gender" required="required"  class="btn btn-primary btn-block btn-small" />
+        <input type="text" name="Age Category" placeholder="Age Category" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Race" placeholder="Race" required="required" class="btn btn-primary btn-block btn-small"/>
+<input type="text" name="Admission Type" placeholder="Admission Type" required="required" class="btn btn-primary btn-block btn-small"/>
+        <input type="text" name="Insulin level" placeholder="Insulin level" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Diabetics Med" placeholder="Diabetics Med" required="required" class="btn btn-primary btn-block btn-small"/>
+    	<input type="text" name="Discharge Disposition" placeholder="Discharge Disposition" required="required" class="btn btn-primary btn-block btn-small"/>
+        <input type="text" name="Medical speciality" placeholder="Medical speciality" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Payer code" placeholder="Payer code" required="required" class="btn btn-primary btn-block btn-small"/>
+
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+<h2 style="color: red;"><marquee><i>A hospital readmission is an episode when a patient who had been discharged from a hospital is admitted again within a specified time interval. Readmission rates had increasingly been used as an outcome measure in health services</i></marquee></h2>
+</font></style></body>
+</html>
 
